@@ -1,13 +1,5 @@
-from django.conf.urls import patterns, include, url
+from django.conf.urls import pattern, url
 
-from django.contrib import admin
-admin.autodiscover()
-
-urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'jtweet.views.home', name='home'),
-    # url(r'^blog/', include('blog.urls')),
-
-    url(r'^admin/', include(admin.site.urls)),
-    url(r'^', include('jtweet.jtweetapp.urls')),
+urlpatterns = patterns('jtweet.jtweetapp.views',
+  url(r'^', 'index', name = 'index'),
 )
